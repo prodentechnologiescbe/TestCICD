@@ -1,2 +1,1 @@
-print('Test Hello-viki Testing')
-print('hi line2 Balaji')
+print('Test Hello-viki')
