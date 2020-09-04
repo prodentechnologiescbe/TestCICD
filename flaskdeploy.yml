@@ -1,17 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ReplicationController
 metadata:
-  name: flask
+  name: flask-controller
 spec:
   replicas: 1
+  selector:
+    app: flask
   template:
     metadata:
       labels:
         app: flask
     spec:
       containers:
-      - name: flask
-        image: developercyg111/flaskapi
+      - image: developercyg111/flaskapi
+        name: springboot
         ports:
         - containerPort: 5000
 ---
