@@ -54,6 +54,6 @@ jobs:
             script: |
               whoami
               ls -al
-              cd CICD
-              kubectl getpods
+              cd Documents
+              kubectl create -f springBootMongo.yml
              
