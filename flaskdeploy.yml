@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - image: developercyg111/flaskapi
-        name: springboot
+        name: flask
         ports:
         - containerPort: 5000
 ---
