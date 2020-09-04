@@ -54,6 +54,6 @@ jobs:
             script: |
               whoami
               ls -al
-              cd Documents
-              kubectl create -f springBootMongo.yml
+              cd CICD
+              kubectl create -f deploy.yml
              
