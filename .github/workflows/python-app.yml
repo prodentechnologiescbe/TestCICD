@@ -55,5 +55,5 @@ jobs:
               whoami
               ls -al
               cd CICD
-              kubectl -f create deploy.yml
+              kubectl getpods
              
