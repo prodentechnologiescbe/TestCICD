@@ -35,16 +35,16 @@ jobs:
       run: |
         pytest hello.py
         
-    - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@v2.1.1
-      env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}]
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "dist/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
-    - name: multiple command
+#     - name: Deploy to Server
+#       uses: easingthemes/ssh-deploy@v2.1.1
+#       env:
+#           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}]
+#           ARGS: "-rltgoDzvO --delete"
+#           SOURCE: "dist/"
+#           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+#           REMOTE_USER: ${{ secrets.REMOTE_USER }}
+#           TARGET: ${{ secrets.REMOTE_TARGET }}
+    - name: Deploy command
       uses: appleboy/ssh-action@master
       with:
             host: ${{ secrets.REMOTE_HOST }}
@@ -55,4 +55,5 @@ jobs:
               whoami
               ls -al
               cd CICD
+              echo '${{ secrets.KUBE_YML }}'  > deploy.yml
               kubectl create -f deploy.yml
