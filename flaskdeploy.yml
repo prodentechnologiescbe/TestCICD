@@ -4,6 +4,8 @@ metadata:
   name: flask
 spec:
   replicas: 1
+  selector:
+      name: flask
   template:
     metadata:
       labels:
