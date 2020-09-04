@@ -62,6 +62,6 @@ jobs:
               whoami
               ls -al
               cd CICD
-              kubectl create -f flaskdeploy.yml
+              kubectl apply -f flaskdeploy.yml
               minikube service flask
              
