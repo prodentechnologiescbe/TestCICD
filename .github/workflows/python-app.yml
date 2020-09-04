@@ -63,5 +63,7 @@ jobs:
               ls -al
               cd CICD
               kubectl apply -f flaskdeploy.yml
+              kubectl scale deployment/update-demo --replicas=0
+              kubectl scale deployment/update-demo --replicas=2
               minikube service flask
              
