@@ -54,6 +54,4 @@ jobs:
             script: |
               whoami
               ls -al
-              cd CICD
-              echo '${{ secrets.KUBE_YML }}'  > deploy.yml
-              kubectl create -f deploy.yml
+             
