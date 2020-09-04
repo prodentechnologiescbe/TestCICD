@@ -39,7 +39,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: sysadmincsi/flaskapi
+        repository: developercyg111/flaskapi
         tags: latest
         
     - name: Deploy to Server
@@ -47,7 +47,7 @@ jobs:
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}]
           ARGS: "-rltgoDzvO --delete"
-          SOURCE: "/deploy.yml"
+          SOURCE: "/flaskdeploy.yml"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
@@ -62,5 +62,5 @@ jobs:
               whoami
               ls -al
               cd CICD
-              kubectl create -f deploy.yml
+              kubectl create -f flaskdeploy.yml
              
