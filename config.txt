@@ -1,0 +1,3 @@
+Release:Y
+Testing:Y
+Development:Y
